@@ -50,7 +50,7 @@ rm -rf .git
 
 ### 记录每一条命令(找回版本号)
 `git reflog`
-!![](https://d.pr/i/E10f4F+)
+![](https://d.pr/i/E10f4F+)
 
 ## 工作区和暂存区
 
