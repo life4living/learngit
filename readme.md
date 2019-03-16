@@ -133,14 +133,14 @@ github 可以使用 `https` 形式 `https://github.com/life4living/CoralMicrobio
 ## 创建于合并分支
 ### 创建分支
 当我们创建新的分支，例如`dev` 时，Git新建了一个指针叫`dev` ，指向 `master` 相同的提交，再把`HEAD` 指向`dev` ，就表示当前分支在`dev` 上：
-![创建dev分支](https://d.pr/i/JTEAAx+)
+![创建dev分支-c](https://d.pr/i/JTEAAx+)
 从现在开始，对工作区的修改和提交就是针对`dev` 分支了，比如新提交一次后，`dev` 指针往前移动一步，而`master` 指针不变：
-![dev提交](https://d.pr/i/SceDzM+)
+![dev提交-c](https://d.pr/i/SceDzM+)
 
 ### 分支合并
 `dev` 上的工作完成后，就可以把`dev`合并到`master` 上:
 1. 直接把`master` 指向`dev` 的当前提交，就完成了合并,合并后可以选择将`dev` 分支删除,仅保留`master` 分支.
-![分之合并](https://d.pr/i/CKVUvZ+)
+![分之合并-c](https://d.pr/i/CKVUvZ+)
 
 ```bash
 # 创建分支
@@ -178,17 +178,17 @@ git checkout master
 
 ### 冲突
 `master` 和 `feature1` 分支分别有新的提交, Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，
-![master文件修改->冲突](https://d.pr/i/qNfaDA+)
-![冲突内容](https://d.pr/i/2FPLQU+)
+![master文件修改->冲突-c](https://d.pr/i/qNfaDA+)
+![冲突内容-c](https://d.pr/i/2FPLQU+)
 ### 解决冲突
 `master` 下修改保存,提交
-![](https://d.pr/i/ulT7PZ+)
+![-c](https://d.pr/i/ulT7PZ+)
 
 ## 分支管理策略
 通常，合并分支时，如果可能，Git会用`Fast forward` 模式，但这种模式下，删除分支后，会丢掉分支信息。如果要强制禁用`Fast forward` 模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。
 <div style="background-color: #D8EAF2; color: #497091; margin-bottom: 1px; padding: 1% 1% 1% 1%; border-radius: 5px;">合并分支时，加上`--no-ff` 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward` 合并就看不出来曾经做过合并。
 </div>
-![分支合并的两种模式](https://d.pr/i/pbtw1Y+)
+![分支合并的两种模式-c](https://d.pr/i/pbtw1Y+)
 <center>
 ![协同开发下,分支模式](https://d.pr/i/6WG8Kp+)
 <br>协同开发下的分支
@@ -239,9 +239,6 @@ git stash apply stash@{0}
   
 ## 操作标签
   * 命令` git push origin <tagname>` 可以推送一个本地标签；
-
   * 命令` git push origin --tags` 可以推送全部未推送过的本地标签；
-
   * 命令` git tag -d <tagname>` 可以删除一个本地标签；
-
   * 命令 `git push origin :refs/tags/<tagname>` 可以删除一个远程标签。
