@@ -245,37 +245,3 @@ git stash apply stash@{0}
   * 命令` git tag -d <tagname>` 可以删除一个本地标签；
 
   * 命令 `git push origin :refs/tags/<tagname>` 可以删除一个远程标签。
-
-  
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
