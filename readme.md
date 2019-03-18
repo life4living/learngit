@@ -242,3 +242,50 @@ git stash apply stash@{0}
   * 命令` git push origin --tags` 可以推送全部未推送过的本地标签；
   * 命令` git tag -d <tagname>` 可以删除一个本地标签；
   * 命令 `git push origin :refs/tags/<tagname>` 可以删除一个远程标签。
+
+# 使用Github
+
+* 在GitHub上，可以任意Fork开源仓库；
+* 自己拥有Fork后的仓库的读写权限；
+* 可以推送pull request给官方仓库来贡献代码。
+
+# 自定义Git
+
+Git 显示颜色 `git config --global color.ui true`
+
+## 忽略特殊文件
+[github官方gitignore配置](https://github.com/github/gitignore)
+
+> 忽略文件的原则是：
+	1. 忽略操作系统自动生成的文件，比如缩略图等；
+	2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的`.class` 文件；
+	3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
+	
+强制添加文件 `git add -f App.class` 
+
+```bash
+git check-ignore -v .DS_Store
+.gitignore:2:.DS_Store	.DS_Store
+# Git会告诉我们，.gitignore的第2行规则忽略了该文件
+```
+
+<font color="#F78AE0">**文件本身要放到版本库里，并且可以对 `.gitignore` 做版本管理. **</font>
+
+## 配置别名
+
+```bash
+Git Config --Global Alias.Co Checkout
+Git Config --Global Alias.Ci Commit
+Git Config --Global Alias.Br Branch
+# `--global`参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+`git lg`
+![](https://d.pr/i/3GAYgS+)
+
+配置Git的时候，加上`--global` 是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。每个仓库的Git配置文件都放在`.git/config` 文件中.
+
+
+
+
+
